@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="header">
+    <input
+      type="text"
+      class="search-header"
+      placeholder="digite aqui o nome da cidade"
+      [(ngModel)]="city"
+    />
+    <button class="btn-header" (click)="getWeather()">enviar</button>
+  </div>
+  <!-- <div *ngIf="weatherData">
+      <h2>{{ weatherData.name }}</h2>
+      <p>Temperature: {{ weatherData.main?.temp }}°C</p>
+      <p>Humidity: {{ weatherData.main?.humidity }}%</p>
+    </div> -->
+  <div class="body">
+    <div class="body-header">
+      <div *ngIf="iconUrl" class="card-weather-icon">
+        <img [src]="iconUrl" alt="Weather Icon" class="weather-icon" />
+      </div>
+      <div *ngIf="weatherData" class="body-info">
+        <h2>{{ weatherData.name }}</h2>
+        <p>Temperature:{{ weatherData.main.temp }}°C</p>
+        <p>Max:{{weatherData.main.temp_max}}</p>
+        <p>Min:{{weatherData.main.temp_min}}</p>
+        <p>Humidity: {{ weatherData.main.humidity }}%</p>
+      </div>
+    </div>
+  </div>
+</div>
